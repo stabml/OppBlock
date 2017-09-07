@@ -1,8 +1,34 @@
+
+var mysql = require('mysql');
+var moment = require('moment');
 var express = require('express');
 var app = express();
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+
+var con = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'root',
+  database : 'opp_block'
 });
-var server = app.listen(3000, function () {
+
+con.connect();
+
+con.query('SELECT day from opp_block_day', function(err, rows, fields) {
+  if (!err){
+    console.log('\nOppBlock days:')
+    for (var i in rows) {
+      var day = rows[i]["day"];
+      console.log('\t'+moment(day).format('MMMM Do YYYY'));
+    }
+
+  }
+  else{
+    console.log('Error, are you sure you ran CREATE_DB.sql?');
+  }
+});
+
+con.end();
+
+var server = app.listen(3030, function () {
   console.log('OppBlock server listening on port %s', server.address().port);
 });
