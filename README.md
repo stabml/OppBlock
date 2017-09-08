@@ -17,7 +17,7 @@ MySQL community server v5.7 or later
 
 ### Installing
 
-Once the Node.js is installed, the project specific dependences can be install very easily with this command in the repository directory:
+Once the Node.js is installed, the project specific dependencies can be installed very easily with the following command in the repository directory:
 
 ```
 npm install
