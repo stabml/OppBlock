@@ -29,6 +29,6 @@ con.query('SELECT day from opp_block_day', function(err, rows, fields) {
 
 con.end();
 
-var server = app.listen(3030, function () {
+var server = app.listen(8080, function () {
   console.log('OppBlock server listening on port %s', server.address().port);
 });
