@@ -14,11 +14,12 @@ var con = mysql.createConnection({
 con.connect();
 
 con.query('SELECT day from opp_block_day', function(err, rows, fields) {
-  if (!err){
+ if (!err){
+    
     console.log('\nOppBlock days:')
     for (var i in rows) {
       var day = rows[i]["day"];
-      console.log('\t'+moment(day).format('MMMM Do YYYY'));
+      console.log('\t'+moment(day).format('dddd MMMM Do, YYYY [at] h:mm'));
     }
 
   }
