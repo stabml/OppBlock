@@ -43,4 +43,4 @@ OppBlock days:
 	August 20th 1999
 ```
 
-...wouldn't that be shitty if I had OppBlock on my birthday 
+...wouldn't that be shitty if I had OppBlock on my birthday!
